@@ -1,12 +1,13 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Heebo', sans-serif; direction: rtl; color: white; }
 .page-container {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('ELYAHU_1.jpeg');
+    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('ELYAHU_1.jpeg');
     background-size: cover; background-position: center; background-attachment: fixed;
     min-height: 100vh; padding: 2rem;
 }
-nav { background: #3D1F0D; padding: 1rem; display: flex; justify-content: space-between; align-items: center; border-radius: 8px; margin-bottom: 2rem; }
-.nav-links a { color: #E8C89A; margin: 0 10px; text-decoration: none; font-weight: bold; }
-.content { max-width: 800px; margin: 0 auto; background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 10px; }
-input, textarea { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: none; }
-button { padding: 10px 20px; background: #B8860B; color: white; border: none; cursor: pointer; font-weight: bold; margin-top: 10px; }
+nav { background: #3D1F0D; padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; border-radius: 8px; margin-bottom: 2rem; border: 1px solid #B8860B; }
+.nav-links a { color: #E8C89A; margin: 0 15px; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
+.content { max-width: 900px; margin: 0 auto; background: rgba(0,0,0,0.6); padding: 3rem; border-radius: 15px; line-height: 1.8; }
+h1 { color: #E8C89A; margin-bottom: 1.5rem; }
+input, textarea { width: 100%; padding: 12px; margin: 10px 0; border-radius: 5px; border: none; font-size: 1rem; }
+button { padding: 12px 25px; background: #B8860B; color: white; border: none; cursor: pointer; font-weight: bold; font-size: 1rem; margin-top: 15px; border-radius: 5px; }
