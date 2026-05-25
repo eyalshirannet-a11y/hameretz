@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>נגריית המרץ – אהרון מרגני | כיסאות אליהו הנביא, מיטות נוער וספות</title>
+<title>נגריית המרץ – אהרון מרגני | כיסאות אליהו הנביא, שולחנות סלון וכורסאות מעץ מלא</title>
 <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -34,7 +34,7 @@ nav{background:var(--wood-dark);padding:0 2rem;display:flex;align-items:center;j
 .hero::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(255,255,255,0.015) 20px,rgba(255,255,255,0.015) 21px),repeating-linear-gradient(-45deg,transparent,transparent 20px,rgba(255,255,255,0.015) 20px,rgba(255,255,255,0.015) 21px)}
 .hero-content{position:relative;z-index:1;max-width:780px;padding:2rem}
 .hero-badge{display:inline-block;background:rgba(212,168,71,0.2);border:1px solid rgba(212,168,71,0.5);color:var(--gold-light);font-size:0.8rem;letter-spacing:0.15em;padding:6px 18px;border-radius:2px;margin-bottom:1.5rem;font-weight:500}
-.hero h1{font-family:'Frank Ruhl Libre',serif;font-size:clamp(2.5rem,6vw,4.5rem);color:#fff;font-weight:900;line-height:1.1;margin-bottom:1rem}
+.hero h1{font-family:'Frank Ruhl Libre',serif;font-size:clamp(2.3rem,5.5vw,4.2rem);color:#fff;font-weight:900;line-height:1.1;margin-bottom:1rem}
 .hero h1 span{color:var(--gold-light);display:block}
 .hero-sub{font-size:1.1rem;color:rgba(255,255,255,0.75);max-width:540px;margin:0 auto 2.5rem;line-height:1.7;font-weight:300}
 .hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
@@ -135,15 +135,269 @@ nav{background:var(--wood-dark);padding:0 2rem;display:flex;align-items:center;j
 .map-container{background:var(--wood-dark);border-radius:8px;overflow:hidden;height:280px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem}
 .map-pin{font-size:3rem;animation:pinbounce 2s ease-in-out infinite}
 @keyframes pinbounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-.map-address"><strong style="color:#fff;display:block;margin-bottom:4px;font-size:1rem">נגריית המרץ</strong>רחוב המרץ, תל אביב-יפו<br><span style="font-size:0.8rem;opacity:0.6">לחץ למעבר למפה</span></div>
-<button class="map-open-btn" onclick="openMaps()">פתח ב-Google Maps ↗</button>
+.map-address{color:#fff;text-align:center;font-size:0.9rem;line-height:1.4;padding:0 1rem;cursor:pointer}
+.map-open-btn{background:var(--gold);color:var(--wood-dark);border:none;padding:8px 16px;border-radius:4px;font-family:'Heebo',sans-serif;font-size:0.8rem;font-weight:700;cursor:pointer;transition:background 0.2s}
+.map-open-btn:hover{background:var(--gold-light)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">נגריית <span>המרץ</span></a>
+  <ul class="nav-links">
+    <li><a href="#products">מוצרים</a></li>
+    <li><a href="#about">אודות</a></li>
+    <li><a href="#order">הזמנה מותאמת</a></li>
+    <li><a href="#contact">צור קשר</a></li>
+  </ul>
+  <a href="tel:0506810291" class="nav-cta">התקשר עכשיו</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">אומנות בעץ מאז 1969</div>
+    <h1>נגריית המרץ <span>אהרון מרגני</span></h1>
+    <p class="hero-sub">ייצור בהתאמה אישית של כיסאות אליהו הנביא, שולחנות סלון וכורסאות מעץ מלא ברמת הגימור הגבוהה ביותר.</p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-primary">צפייה במוצרים</a>
+      <a href="#order" class="btn-outline">הזמנה אישית</a>
+    </div>
+  </div>
+  <div class="hero-scroll">גלול למטה</div>
+</section>
+
+<section class="section" id="products">
+  <div class="section-inner">
+    <div class="section-label">הקולקציה שלנו</div>
+    <h2 class="section-title">רהיטים מעץ מלא בהזמנה</h2>
+    <p class="section-sub">כל רהיט מיוצר בעבודת יד קפדנית, תוך שימוש בחומרי הגלם המובחרים ביותר ודגש על עמידות לשנים קדימה.</p>
+    
+    <div class="products-grid">
+      <div class="product-card" onclick="openOrderModal('כיסא אליהו הנביא')">
+        <div class="product-gallery">
+          <div class="product-badge">התמחות מיוחדת</div>
+          <div class="gallery-slides">
+            <div class="gallery-slide active"><img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=cover&w=500&q=80" alt="כיסא אליהו הנביא"></div>
+          </div>
+        </div>
+        <div class="product-body">
+          <h3 class="product-name">כיסא אליהו הנביא</h3>
+          <p class="product-desc">כיסאות מהודרים לבתי כנסת ולאירועים משפחתיים, מגולפים בעץ מלא בעיצובים מסורתיים ומרשימים.</p>
+          <div class="product-features">
+            <span class="product-feat">עץ מלא</span>
+            <span class="product-feat">גילוף ידני</span>
+            <span class="product-feat">ריפוד יוקרתי</span>
+          </div>
+          <div class="product-price">הצעת מחיר <span>/ לפי מידה</span></div>
+          <button class="product-order-btn">פרטים והזמנה rapide</button>
+        </div>
+      </div>
+
+      <div class="product-card" onclick="openOrderModal('שולחן סלון עץ מלא')">
+        <div class="product-gallery">
+          <div class="gallery-slides">
+            <div class="gallery-slide active"><img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=cover&w=500&q=80" alt="שולחן סלון"></div>
+          </div>
+        </div>
+        <div class="product-body">
+          <h3 class="product-name">שולחנות סלון</h3>
+          <p class="product-desc">שולחנות סלון מעוצבים מעץ טבעי, המעניקים חמימות ונוכחות מרכזית וייחודית לחלל המגורים שלכם.</p>
+          <div class="product-features">
+            <span class="product-feat">עץ אלון/אגוז</span>
+            <span class="product-feat">עמיד לשריטות</span>
+            <span class="product-feat">מידות גמישות</span>
+          </div>
+          <div class="product-price">הצעת מחיר <span>/ בהתאמה</span></div>
+          <button class="product-order-btn">פרטים והזמנה rapide</button>
+        </div>
+      </div>
+
+      <div class="product-card" onclick="openOrderModal('כורסא מעץ מלא')">
+        <div class="product-gallery">
+          <div class="gallery-slides">
+            <div class="gallery-slide active"><img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=cover&w=500&q=80" alt="כורסא מעץ מלא"></div>
+          </div>
+        </div>
+        <div class="product-body">
+          <h3 class="product-name">כורסאות מעץ מלא</h3>
+          <p class="product-desc">כורסאות יחיד נוחות ומסיביות המשלבות שלדת עץ חזקה במיוחד עם נוחות ישיבה וריפודים איכותיים.</p>
+          <div class="product-features">
+            <span class="product-feat">מבנה ארגונומי</span>
+            <span class="product-feat">עץ מלא מובחר</span>
+            <span class="product-feat">מגוון בדי ריפוד</span>
+          </div>
+          <div class="product-price">הצעת מחיר <span>/ אישית</span></div>
+          <button class="product-order-btn">פרטים והזמנה rapide</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section about-section" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <div class="section-label" style="color:var(--gold-light)">הסיפור שלנו</div>
+        <h2 class="about-title">דורות של <span>אהבה לעץ</span></h2>
+        <p class="about-text">נגריית המרץ הוקמה בשנת 1969 בדגש על ייצור רהיטים איכותיים שמחזיקים מעמד לדורות. אנו מאמינים שרהיט הוא לא רק מוצר צריכה, אלא פריט אומנות שנשאר בבית לשנים רבות.</p>
+        <p class="about-text">ההתמחות הייחודית שלנו היא בבניית כיסאות אליהו הנביא מפוארים, שולחנות סלון ייחודיים וכורסאות יציבות מעץ מלא בלבד, תוך התאמה מלאה לדרישות ומידות הלקוח.</p>
+        
+        <div class="owner-card">
+          <div class="owner-avatar">אמ</div>
+          <div class="owner-info">
+            <strong>אהרון מרגני</strong>
+            <span>בעל הנגרייה והנגר הראשי</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="about-stats">
+        <div class="stat-item"><span class="stat-num">1969</span><span class="stat-label">שנת הקמה</span></div>
+        <div class="stat-item"><span class="stat-num">100%</span><span class="stat-label">עץ מלא מובחר</span></div>
+        <div class="stat-item"><span class="stat-num">עבודת יד</span><span class="stat-label">ללא פס ייצור המוני</span></div>
+        <div class="stat-item"><span class="stat-num">אישית</span><span class="stat-label">התאמה לכל מידה</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section order-section" id="order">
+  <div class="section-inner">
+    <div style="text-align:center">
+      <div class="section-label">מפרט הזמנה</div>
+      <h2 class="section-title">תכנון הרהיט שלך</h2>
+      <p class="section-sub" style="margin:0 auto 3rem">בנה את פנייתך בשלושה שלבים פשוטים ואהרון יחזור אליך עם ייעוץ מקצועי והצעת מחיר מדויקת.</p>
+    </div>
+
+    <div class="order-card">
+      <div class="order-steps">
+        <div class="step active" id="step1"><div class="step-num">1</div><div class="step-label">פרטי קשר</div></div>
+        <div class="step inactive" id="step2"><div class="step-num">2</div><div class="step-label">בחירת רהיט</div></div>
+        <div class="step inactive" id="step3"><div class="step-num">3</div><div class="step-label">אישור ושליחה</div></div>
+      </div>
+
+      <div id="form-page1">
+        <div class="form-group"><label class="form-label">שם מלא *</label><input type="text" class="form-input" id="fname" placeholder="ישראל ישראלי"></div>
+        <div class="form-group"><label class="form-label">מספר טלפון סלולרי *</label><input type="tel" class="form-input" id="fphone" placeholder="050-681-0291"></div>
+        <div class="form-group"><label class="form-label">כתובת אימייל (אופציונלי)</label><input type="email" class="form-input" id="femail" placeholder="yourname@gmail.com"></div>
+        <div class="form-group"><label class="form-label">עיר / יישוב</label><input type="text" class="form-input" id="fcity" placeholder="תל אביב"></div>
+        <button class="submit-btn" style="margin-top:1.5rem" onclick="nextStep(2)">המשך לשלב הבא ←</button>
+      </div>
+
+      <div id="form-page2" style="display:none">
+        <div class="form-group">
+          <label class="form-label">סוג הרהיט המבוקש *</label>
+          <select class="form-select" id="fproduct">
+            <option value="">-- בחר פריט --</option>
+            <option value="כיסא אליהו הנביא">כיסא אליהו הנביא</option>
+            <option value="שולחן סלון">שולחן סלון</option>
+            <option value="כורסא מעץ מלא">כורסא מעץ מלא</option>
+            <option value="אחר / שילוב מוצרים">אחר / עבודה מיוחדת</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">סוג העץ המועדף</label>
+            <select class="form-select" id="fwood">
+              <option value="עץ מלא מובחר (המלצת הנגר)">המלצת הנגר</option>
+              <option value="עץ אלון">עץ אלון</option>
+              <option value="עץ אורן מסיבי">עץ אורן</option>
+              <option value="עץ אגוז">עץ אגוז</option>
+              <option value="עץ בוק">עץ בוק</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">גוון / צביעה</label>
+            <select class="form-select" id="fcolor">
+              <option value="לכה טבעית מט/מבריק">לכה טבעית (גוון העץ)</option>
+              <option value="גוון עץ כהה (אגוז/וניל)">גוון כהה</option>
+              <option value="צבע אטום (שמן/אפוקסי)">צבע אטום</option>
+              <option value="לא נקבע - ייסגר מול אהרון">ייקבע בייעוץ</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group"><label class="form-label">מידות מבוקשות או הערות מיוחדות</label><textarea class="form-textarea" id="fnotes" placeholder="למשל: אורך שולחן סלון מבוקש, סגנון גילוף הכיסא וכדומה..."></textarea></div>
+        <div style="display:flex;gap:1rem;margin-top:1.5rem">
+          <button class="submit-btn" style="background:#aaa;color:#fff;flex:1" onclick="nextStep(1)">→ חזור</button>
+          <button class="submit-btn" style="flex:2" onclick="nextStep(3)">הצג סיכום הזמנה ←</button>
+        </div>
+      </div>
+
+      <div id="form-page3" style="display:none">
+        <div style="background:var(--off-white);border:1px dashed var(--wood-light);border-radius:6px;padding:1.5rem;margin-bottom:1.5rem">
+          <h4 style="font-family:'Frank Ruhl Libre',serif;color:var(--wood-dark);margin-bottom:0.75rem;font-size:1.1rem">סיכום המפרט שלך:</h4>
+          <div id="summary-content" style="font-size:0.95rem;line-height:1.6;color:var(--text-dark)"></div>
+        </div>
+        
+        <div class="gmail-connect">
+          <div class="gmail-text">
+            <strong>שלח העתק אליי למייל</strong>
+            <span id="gmail-sub-text">תקבל את פרטי המפרט ישירות לתיבת הדואר שלך</span>
+          </div>
+          <button class="gmail-btn" id="gmail-btn" onclick="connectGmail()">שלח העתק למייל</button>
+        </div>
+
+        <button class="submit-btn" onclick="submitOrder()">שלח בקשה לאהרון 🛠️</button>
+        <button class="submit-btn" style="background:#aaa;color:#fff;margin-top:0.75rem;padding:8px" onclick="nextStep(2)">שינוי פרטים</button>
+      </div>
+
+      <div class="success-msg" id="success-msg">
+        <div class="success-icon">✨</div>
+        <h3 class="success-title">המפרט מוכן לשליחה!</h3>
+        <p class="success-text" style="margin-bottom:1.5rem">כדי להעביר את הפרטים ישירות לאהרון, בחר את הדרך הנוחה לך ביותר:</p>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;max-width:320px;margin:0 auto">
+          <a class="submit-btn" id="wa-confirm" href="#" target="_blank" style="background:#25D366;text-decoration:none">💬 שליחה מהירה ב-WhatsApp</a>
+          <div id="gmail-confirm-msg"></div>
+          <button class="submit-btn" style="background:var(--wood-light);font-size:0.9rem" onclick="resetForm()">הזמנה חדשה</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact" style="background:var(--cream)">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div>
+        <div class="section-label">יצירת קשר</div>
+        <h2 class="section-title">נשמח לשמוע מכך</h2>
+        <p class="section-sub">הנגרייה ממוקמת בתל אביב ומשרתת לקוחות פרטיים, מוסדות ובתי כנסת בכל רחבי הארץ.</p>
+        
+        <div class="contact-methods">
+          <a href="https://wa.me/972506810291" target="_blank" class="contact-card">
+            <div class="contact-icon whatsapp">💬</div>
+            <div class="contact-info-text"><strong>WhatsApp (נייד אהרון)</strong><span>050-681-0291 – מענה מהיר</span></div>
+          </a>
+          <a href="tel:0506810291" class="contact-card">
+            <div class="contact-icon phone">📱</div>
+            <div class="contact-info-text"><strong>טלפון סלולרי</strong><span>050-681-0291</span></div>
+          </a>
+          <a href="tel:036810291" class="contact-card">
+            <div class="contact-icon landline">📞</div>
+            <div class="contact-info-text"><strong>טלפון קווי בנגרייה</strong><span>03-681-0291</span></div>
+          </a>
+        </div>
+      </div>
+      
+      <div>
+        <div class="map-container">
+          <div class="map-pin">📍</div>
+          <div class="map-address">
+            <strong style="color:#fff;display:block;margin-bottom:4px;font-size:1rem">נגריית המרץ</strong>
+            רחוב המרץ, תל אביב-יפו<br>
+            <span style="font-size:0.8rem;opacity:0.6">צמוד לשדרות הר ציון</span>
+          </div>
+          <button class="map-open-btn" onclick="openMaps()">פתח ב-Google Maps ↗</button>
         </div>
         <div style="background:#fff;border:1px solid rgba(196,129,58,0.15);border-radius:8px;padding:1.25rem;margin-top:1.25rem">
           <div style="font-weight:600;color:var(--text-dark);margin-bottom:0.75rem;font-size:0.9rem">⏰ שעות פעילות</div>
           <table style="width:100%;font-size:0.85rem;color:var(--text-mid)">
             <tr><td style="padding:4px 0">ראשון – חמישי</td><td style="text-align:left;font-weight:500;color:var(--text-dark)">07:30 – 17:00</td></tr>
             <tr><td style="padding:4px 0">שישי</td><td style="text-align:left;font-weight:500;color:var(--text-dark)">07:30 – 13:00</td></tr>
-            <tr><td style="padding:4px 0;color:#bbb">שבת</td><td style="text-align:left;color:#bbb">סגור</td></tr>
+            <tr><td style="padding:4px 0;color:#bbb">שבת</td><td style="text-align:left;color:#bbb">סגור (שומר שבת)</td></tr>
           </table>
         </div>
       </div>
@@ -153,8 +407,8 @@ nav{background:var(--wood-dark);padding:0 2rem;display:flex;align-items:center;j
 
 <footer>
   <div class="footer-logo">נגריית <span>המרץ</span></div>
-  <div class="footer-owner">אהרון מרגני · בעל הנגריה</div>
-  <div class="footer-sub">פעילים מאז 1969 · עבודת יד · עץ מלא · כיסאות אליהו הנביא, מיטות נוער וספות</div>
+  <div class="footer-owner">אהרון מרגני · אומנות בעץ</div>
+  <div class="footer-sub">פעילים מאז 1969 · עבודת יד · עץ מלא · כיסאות אליהו הנביא, שולחנות סלון וכורסאות</div>
   <ul class="footer-links">
     <li><a href="#products">מוצרים</a></li>
     <li><a href="#about">אודות</a></li>
@@ -169,12 +423,12 @@ nav{background:var(--wood-dark);padding:0 2rem;display:flex;align-items:center;j
 </footer>
 
 <div class="modal-overlay" id="order-modal" onclick="closeModal(event)">
-  <div class="modal">
-    <button class="modal-close" onclick="document.getElementById('order-modal').classList.remove('open')">×</button>
-    <div class="modal-title">הזמנה מהירה</div>
-    <div class="modal-product" id="modal-product-name"></div>
+  <div class="modal" style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;padding:2rem;border-radius:8px;max-width:450px;width:90%;box-shadow:0 10px 30px rgba(0,0,0,0.3);z-index:200;direction:rtl">
+    <button class="modal-close" onclick="document.getElementById('order-modal').classList.remove('open')" style="position:absolute;top:10px;left:10px;background:none;border:none;font-size:1.5rem;cursor:pointer">×</button>
+    <div class="modal-title" style="font-family:'Frank Ruhl Libre',serif;font-size:1.4rem;font-weight:700;color:var(--wood-dark);margin-bottom:0.5rem">הזמנה מהירה</div>
+    <div class="modal-product" id="modal-product-name" style="font-weight:500;color:var(--wood-mid);margin-bottom:1.25rem"></div>
     <div class="form-group"><label class="form-label">שם מלא</label><input type="text" class="form-input" id="mname" placeholder="ישראל ישראלי"></div>
-    <div class="form-group"><label class="form-label">טלפון</label><input type="tel" class="form-input" id="mphone" placeholder="050-0000000"></div>
+    <div class="form-group"><label class="form-label">טלפון</label><input type="tel" class="form-input" id="mphone" placeholder="050-681-0291"></div>
     <div class="form-group"><label class="form-label">הערה / דרישות מיוחדות</label><textarea class="form-textarea" id="mnotes" placeholder="פרטים נוספים, מידות, העדפות..."></textarea></div>
     <div style="display:flex;gap:0.75rem;margin-top:1.5rem">
       <button class="submit-btn" onclick="sendModalWhatsApp()" style="background:#25D366;flex:1">💬 WhatsApp</button>
@@ -183,26 +437,13 @@ nav{background:var(--wood-dark);padding:0 2rem;display:flex;align-items:center;j
   </div>
 </div>
 
+<style>
+.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 150; }
+.modal-overlay.open { display: block; }
+</style>
+
 <script>
 var currentStep=1,gmailConnected=false,selectedProduct='';
-
-function moveSlide(event, button, direction) {
-  event.stopPropagation();
-  var gallery = button.closest('.product-gallery');
-  var slides = gallery.querySelectorAll('.gallery-slide');
-  var dots = gallery.querySelectorAll('.gallery-dot');
-  var activeIndex = 0;
-  slides.forEach(function(slide, idx) {
-    if(slide.classList.contains('active')) activeIndex = idx;
-  });
-  slides[activeIndex].classList.remove('active');
-  if(dots.length > 0) dots[activeIndex].classList.remove('active');
-  var newIndex = activeIndex + direction;
-  if(newIndex >= slides.length) newIndex = 0;
-  if(newIndex < 0) newIndex = slides.length - 1;
-  slides[newIndex].classList.add('active');
-  if(dots.length > 0) dots[newIndex].classList.add('active');
-}
 
 function nextStep(n){
   if(n===2){var nm=document.getElementById('fname').value,ph=document.getElementById('fphone').value;if(!nm||!ph){alert('אנא מלא שם וטלפון');return}}
@@ -223,29 +464,29 @@ function connectGmail(){
   var email=document.getElementById('femail').value;
   if(!email){alert('אנא הזן כתובת אימייל בשלב הראשון');return}
   var btn=document.getElementById('gmail-btn');btn.textContent='מחבר...';btn.disabled=true;
-  setTimeout(function(){gmailConnected=true;btn.textContent='✓ מחובר';btn.className='gmail-btn connected';document.getElementById('gmail-status-text').textContent='Gmail מחובר: '+email;document.getElementById('gmail-sub-text').textContent='אישור ישלח לתיבת הדואר שלך אחרי השליחה'},1400);
+  setTimeout(function(){gmailConnected=true;btn.textContent='✓ מחובר';btn.className='gmail-btn connected';document.getElementById('gmail-sub-text').textContent='אישור ישלח לתיבת הדואר שלך אחרי השליחה'},1400);
 }
 
 function submitOrder(){
   var nm=document.getElementById('fname').value,ph=document.getElementById('fphone').value,pr=document.getElementById('fproduct').value,wd=document.getElementById('fwood').value,cl=document.getElementById('fcolor').value,nt=document.getElementById('fnotes').value||'אין',em=document.getElementById('femail').value;
   document.getElementById('form-page3').style.display='none';
   document.getElementById('success-msg').style.display='block';
-  var waMsg='שלום אהרון! שמי '+nm+', רציתי להזמין '+pr+' ('+wd+', '+cl+'). טלפון: '+ph;
+  var waMsg='שלום אהרון! שמי '+nm+', רציתי לקבל הצעת מחיר עבור '+pr+' ('+wd+', '+cl+'). טלפון: '+ph;
   if(nt!=='אין')waMsg+='. הערות: '+nt;
   document.getElementById('wa-confirm').href='https://wa.me/972506810291?text='+encodeURIComponent(waMsg);
   if(gmailConnected&&em){
-    var subject='אישור הזמנה – נגריית המרץ';
-    var body='שלום '+nm+',\n\nקיבלנו את הזמנתך בנגריית המרץ!\n\n📋 פרטי ההזמנה:\nמוצר: '+pr+'\nחומר: '+wd+'\nצבע/גוון: '+cl+'\nהערות: '+nt+'\n\nאהרון מרגני יצור איתך קשר בקרוב לתיאום.\n\nלשאלות: 050-681-0291 | 03-681-0291\n\nבברכה,\nנגריית המרץ – מאז 1969';
+    var subject='מפרט הזמנה – נגריית המרץ';
+    var body='שלום '+nm+',\n\nקיבלנו את מפרט הבקשה שלך בנגריית המרץ!\n\n📋 פרטי הפנייה:\nמוצר: '+pr+'\nחומר: '+wd+'\nצבע/גוון: '+cl+'\nהערות: '+nt+'\n\nאהרון מרגני יצור איתך קשר בקרוב.\n\nלשאלות: 050-681-0291 | 03-681-0291\n\nבברכה,\nנגריית המרץ – מאז 1969';
     var gmailUrl='https://mail.google.com/mail/u/0/?view=cm&to='+encodeURIComponent(em)+'&su='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
-    document.getElementById('gmail-confirm-msg').innerHTML='<a href="'+gmailUrl+'" target="_blank" style="color:#4285F4;font-weight:500;text-decoration:none">📧 לחץ לשליחת אישור ב-Gmail ←</a>';
+    document.getElementById('gmail-confirm-msg').innerHTML='<a href="'+gmailUrl+'" target="_blank" style="color:#4285F4;font-weight:500;text-decoration:none;display:block;padding:10px;border:1px solid #4285F4;border-radius:4px;text-align:center">📧 לחץ לשליחת אישור ב-Gmail ←</a>';
   }
 }
 
 function resetForm(){
   ['fname','fphone','femail','fcity','fnotes','mname','mphone','mnotes'].forEach(function(id){var el=document.getElementById(id);if(el)el.value=''});
   document.getElementById('fproduct').value='';document.getElementById('success-msg').style.display='none';
-  gmailConnected=false;document.getElementById('gmail-btn').textContent='חבר Gmail';document.getElementById('gmail-btn').className='gmail-btn';document.getElementById('gmail-btn').disabled=false;
-  document.getElementById('gmail-status-text').textContent='חבר את Gmail לקבלת אישור הזמנה';document.getElementById('gmail-sub-text').textContent='תקבל אישור אוטומטי לתיבת הדואר שלך';
+  gmailConnected=false;document.getElementById('gmail-btn').textContent='שלח העתק למייל';document.getElementById('gmail-btn').className='gmail-btn';document.getElementById('gmail-btn').disabled=false;
+  document.getElementById('gmail-sub-text').textContent='תקבל את פרטי המפרט ישירות לתיבת הדואר שלך';
   nextStep(1);
 }
 
