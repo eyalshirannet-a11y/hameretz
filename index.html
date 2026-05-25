@@ -58,13 +58,6 @@ nav{background:var(--wood-dark);padding:0 2rem;display:flex;align-items:center;j
 .gallery-slide{position:absolute;inset:0;opacity:0;transition:opacity 0.4s ease-in-out;display:flex;align-items:center;justify-content:center}
 .gallery-slide.active{opacity:1;position:relative}
 .gallery-slide img{width:100%;height:100%;object-fit:cover}
-.gallery-nav{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;background:rgba(0,0,0,0.4);color:#fff;border:none;border-radius:50%;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;transition:background 0.2s}
-.gallery-nav:hover{background:rgba(0,0,0,0.7)}
-.gallery-nav.prev{right:10px}
-.gallery-nav.next{left:10px}
-.gallery-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:10}
-.gallery-dot{width:8px;height:8px;background:rgba(255,255,255,0.4);border-radius:50%;transition:background 0.2s}
-.gallery-dot.active{background:var(--gold-light);width:10px;border-radius:4px}
 .product-badge{position:absolute;top:12px;right:12px;background:var(--gold);color:var(--wood-dark);font-size:0.7rem;font-weight:700;padding:4px 10px;border-radius:2px;letter-spacing:0.05em;z-index:5}
 .product-body{padding:1.5rem;display:flex;flex-direction:column;flex-grow:1}
 .product-name{font-family:'Frank Ruhl Libre',serif;font-size:1.4rem;font-weight:700;color:var(--wood-dark);margin-bottom:0.5rem}
@@ -177,7 +170,7 @@ nav{background:var(--wood-dark);padding:0 2rem;display:flex;align-items:center;j
         <div class="product-gallery">
           <div class="product-badge">התמחות מיוחדת</div>
           <div class="gallery-slides">
-            <div class="gallery-slide active"><img src="ELYAHU_1.JPEG" alt="כיסא אליהו הנביא">אליהו הנביא">
+            <div class="gallery-slide active"><img src="elyahu_1.jpeg" alt="כיסא אליהו הנביא"></div>
           </div>
         </div>
         <div class="product-body">
@@ -189,14 +182,14 @@ nav{background:var(--wood-dark);padding:0 2rem;display:flex;align-items:center;j
             <span class="product-feat">ריפוד יוקרתי</span>
           </div>
           <div class="product-price">הצעת מחיר <span>/ לפי מידה</span></div>
-          <button class="product-order-btn">פרטים והזמנה rapide</button>
+          <button class="product-order-btn">פרטים והזמנה</button>
         </div>
       </div>
 
       <div class="product-card" onclick="openOrderModal('שולחן סלון עץ מלא')">
         <div class="product-gallery">
           <div class="gallery-slides">
-            <div class="gallery-slide active"><img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=cover&w=500&q=80" alt="שולחן סלון"></div>
+            <div class="gallery-slide active"><img src="table_4.png" alt="שולחן סלון"></div>
           </div>
         </div>
         <div class="product-body">
@@ -208,26 +201,26 @@ nav{background:var(--wood-dark);padding:0 2rem;display:flex;align-items:center;j
             <span class="product-feat">מידות גמישות</span>
           </div>
           <div class="product-price">הצעת מחיר <span>/ בהתאמה</span></div>
-          <button class="product-order-btn">פרטים והזמנה rapide</button>
+          <button class="product-order-btn">פרטים והזמנה</button>
         </div>
       </div>
 
       <div class="product-card" onclick="openOrderModal('כורסא מעץ מלא')">
         <div class="product-gallery">
           <div class="gallery-slides">
-            <div class="gallery-slide active"><img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=cover&w=500&q=80" alt="כורסא מעץ מלא"></div>
+            <div class="gallery-slide active"><img src="sopa.jpeg" alt="ספה"></div>
           </div>
         </div>
         <div class="product-body">
-          <h3 class="product-name">כורסאות מעץ מלא</h3>
-          <p class="product-desc">כורסאות יחיד נוחות ומסיביות המשלבות שלדת עץ חזקה במיוחד עם נוחות ישיבה וריפודים איכותיים.</p>
+          <h3 class="product-name">ספה וכורסאות</h3>
+          <p class="product-desc">כורסאות וספות נוחות ומסיביות המשלבות שלדת עץ חזקה במיוחד עם נוחות ישיבה וריפודים איכותיים.</p>
           <div class="product-features">
             <span class="product-feat">מבנה ארגונומי</span>
             <span class="product-feat">עץ מלא מובחר</span>
             <span class="product-feat">מגוון בדי ריפוד</span>
           </div>
           <div class="product-price">הצעת מחיר <span>/ אישית</span></div>
-          <button class="product-order-btn">פרטים והזמנה rapide</button>
+          <button class="product-order-btn">פרטים והזמנה</button>
         </div>
       </div>
     </div>
@@ -242,8 +235,8 @@ nav{background:var(--wood-dark);padding:0 2rem;display:flex;align-items:center;j
       <div>
         <div class="section-label" style="color:var(--gold-light)">הסיפור שלנו</div>
         <h2 class="about-title">דורות של <span>אהבה לעץ</span></h2>
-        <p class="about-text">נגריית המרץ הוקמה בשנת 1969 בדגש על ייצור רהיטים איכותיים שמחזיקים מעמד לדורות. אנו מאמינים שרהיט הוא לא רק מוצר צריכה, אלא פריט אומנות שנשאר בבית לשנים רבות.</p>
-        <p class="about-text">ההתמחות הייחודית שלנו היא בבניית כיסאות אליהו הנביא מפוארים, שולחנות סלון ייחודיים וכורסאות יציבות מעץ מלא בלבד, תוך התאמה מלאה לדרישות ומידות הלקוח.</p>
+        <p class="about-text">נגריית המרץ הוקמה על ידי אהרון מרגני, נגר אומן בעל ותק רב משנת 1969. אנו מתמחים בעבודות נגרות מקצועיות בעבודת יד, עם דגש על איכות ללא פשרות, דיוק בפרטים הקטנים והתאמה אישית לצרכי הלקוח.</p>
+        <p class="about-text">ההתמחות הייחודית שלנו היא בבניית כיסאות אליהו הנביא מפוארים, שולחנות סלון ייחודיים וכורסאות יציבות מעץ מלא בלבד.</p>
         
         <div class="owner-card">
           <div class="owner-avatar">אמ</div>
