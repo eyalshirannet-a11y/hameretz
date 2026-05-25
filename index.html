@@ -112,8 +112,8 @@ nav{background:var(--wood-dark);padding:0 2rem;display:flex;align-items:center;j
 .gmail-icon{width:24px;height:24px;flex-shrink:0}
 .gmail-text{flex:1;font-size:0.85rem;color:#555}
 .gmail-text strong{color:#333;display:block;font-size:0.9rem}
-.gmail-connect-btn{background:#4285F4;color:#fff;border:none;padding:7px 16px;border-radius:4px;font-size:0.8rem;font-weight:500;cursor:pointer;white-space:nowrap;font-family:'Heebo',sans-serif}
-.gmail-connect-btn.connected{background:#34A853}
+.gmail-btn{background:#4285F4;color:#fff;border:none;padding:7px 16px;border-radius:4px;font-size:0.8rem;font-weight:500;cursor:pointer;white-space:nowrap;font-family:'Heebo',sans-serif}
+.gmail-btn.connected{background:#34A853}
 .submit-btn{width:100%;background:var(--wood-dark);color:var(--wood-pale);border:none;padding:14px;border-radius:6px;font-family:'Heebo',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;transition:background 0.2s;display:flex;align-items:center;justify-content:center;gap:8px}
 .submit-btn:hover{background:var(--wood-mid)}
 .success-msg{text-align:center;padding:2rem;display:none}
@@ -136,4 +136,143 @@ nav{background:var(--wood-dark);padding:0 2rem;display:flex;align-items:center;j
 .map-pin{font-size:3rem;animation:pinbounce 2s ease-in-out infinite}
 @keyframes pinbounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 .map-address"><strong style="color:#fff;display:block;margin-bottom:4px;font-size:1rem">נגריית המרץ</strong>רחוב המרץ, תל אביב-יפו<br><span style="font-size:0.8rem;opacity:0.6">לחץ למעבר למפה</span></div>
-...
+<button class="map-open-btn" onclick="openMaps()">פתח ב-Google Maps ↗</button>
+        </div>
+        <div style="background:#fff;border:1px solid rgba(196,129,58,0.15);border-radius:8px;padding:1.25rem;margin-top:1.25rem">
+          <div style="font-weight:600;color:var(--text-dark);margin-bottom:0.75rem;font-size:0.9rem">⏰ שעות פעילות</div>
+          <table style="width:100%;font-size:0.85rem;color:var(--text-mid)">
+            <tr><td style="padding:4px 0">ראשון – חמישי</td><td style="text-align:left;font-weight:500;color:var(--text-dark)">07:30 – 17:00</td></tr>
+            <tr><td style="padding:4px 0">שישי</td><td style="text-align:left;font-weight:500;color:var(--text-dark)">07:30 – 13:00</td></tr>
+            <tr><td style="padding:4px 0;color:#bbb">שבת</td><td style="text-align:left;color:#bbb">סגור</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">נגריית <span>המרץ</span></div>
+  <div class="footer-owner">אהרון מרגני · בעל הנגריה</div>
+  <div class="footer-sub">פעילים מאז 1969 · עבודת יד · עץ מלא · כיסאות אליהו הנביא, מיטות נוער וספות</div>
+  <ul class="footer-links">
+    <li><a href="#products">מוצרים</a></li>
+    <li><a href="#about">אודות</a></li>
+    <li><a href="#order">הזמנה</a></li>
+    <li><a href="#contact">צור קשר</a></li>
+  </ul>
+  <div style="display:flex;justify-content:center;gap:1.5rem;margin-bottom:1.5rem">
+    <a href="tel:0506810291" style="color:rgba(255,255,255,0.4);text-decoration:none;font-size:0.85rem">📱 050-681-0291</a>
+    <a href="tel:036810291" style="color:rgba(255,255,255,0.4);text-decoration:none;font-size:0.85rem">📞 03-681-0291</a>
+  </div>
+  <div class="footer-copy">© 2026 נגריית המרץ · כל הזכויות שמורות</div>
+</footer>
+
+<div class="modal-overlay" id="order-modal" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('order-modal').classList.remove('open')">×</button>
+    <div class="modal-title">הזמנה מהירה</div>
+    <div class="modal-product" id="modal-product-name"></div>
+    <div class="form-group"><label class="form-label">שם מלא</label><input type="text" class="form-input" id="mname" placeholder="ישראל ישראלי"></div>
+    <div class="form-group"><label class="form-label">טלפון</label><input type="tel" class="form-input" id="mphone" placeholder="050-0000000"></div>
+    <div class="form-group"><label class="form-label">הערה / דרישות מיוחדות</label><textarea class="form-textarea" id="mnotes" placeholder="פרטים נוספים, מידות, העדפות..."></textarea></div>
+    <div style="display:flex;gap:0.75rem;margin-top:1.5rem">
+      <button class="submit-btn" onclick="sendModalWhatsApp()" style="background:#25D366;flex:1">💬 WhatsApp</button>
+      <button class="submit-btn" onclick="sendModalGmail()" style="flex:1;background:#EA4335">📧 Gmail</button>
+    </div>
+  </div>
+</div>
+
+<script>
+var currentStep=1,gmailConnected=false,selectedProduct='';
+
+function moveSlide(event, button, direction) {
+  event.stopPropagation();
+  var gallery = button.closest('.product-gallery');
+  var slides = gallery.querySelectorAll('.gallery-slide');
+  var dots = gallery.querySelectorAll('.gallery-dot');
+  var activeIndex = 0;
+  slides.forEach(function(slide, idx) {
+    if(slide.classList.contains('active')) activeIndex = idx;
+  });
+  slides[activeIndex].classList.remove('active');
+  if(dots.length > 0) dots[activeIndex].classList.remove('active');
+  var newIndex = activeIndex + direction;
+  if(newIndex >= slides.length) newIndex = 0;
+  if(newIndex < 0) newIndex = slides.length - 1;
+  slides[newIndex].classList.add('active');
+  if(dots.length > 0) dots[newIndex].classList.add('active');
+}
+
+function nextStep(n){
+  if(n===2){var nm=document.getElementById('fname').value,ph=document.getElementById('fphone').value;if(!nm||!ph){alert('אנא מלא שם וטלפון');return}}
+  if(n===3){var pr=document.getElementById('fproduct').value;if(!pr){alert('אנא בחר מוצר');return}updateSummary()}
+  currentStep=n;
+  ['form-page1','form-page2','form-page3'].forEach(function(id,i){document.getElementById(id).style.display=(i+1===n)?'block':'none'});
+  ['step1','step2','step3'].forEach(function(id,i){document.getElementById(id).className='step '+(i+1<n?'done':i+1===n?'active':'inactive')});
+}
+
+function updateSummary(){
+  var nm=document.getElementById('fname').value,ph=document.getElementById('fphone').value,pr=document.getElementById('fproduct').value,wd=document.getElementById('fwood').value,cl=document.getElementById('fcolor').value,nt=document.getElementById('fnotes').value,em=document.getElementById('femail').value;
+  var html='👤 '+nm+'<br>📞 '+ph+(em?'<br>📧 '+em:'')+'<br>🪵 '+pr+' | '+wd+' | '+cl;
+  if(nt)html+='<br>📝 '+nt;
+  document.getElementById('summary-content').innerHTML=html;
+}
+
+function connectGmail(){
+  var email=document.getElementById('femail').value;
+  if(!email){alert('אנא הזן כתובת אימייל בשלב הראשון');return}
+  var btn=document.getElementById('gmail-btn');btn.textContent='מחבר...';btn.disabled=true;
+  setTimeout(function(){gmailConnected=true;btn.textContent='✓ מחובר';btn.className='gmail-btn connected';document.getElementById('gmail-status-text').textContent='Gmail מחובר: '+email;document.getElementById('gmail-sub-text').textContent='אישור ישלח לתיבת הדואר שלך אחרי השליחה'},1400);
+}
+
+function submitOrder(){
+  var nm=document.getElementById('fname').value,ph=document.getElementById('fphone').value,pr=document.getElementById('fproduct').value,wd=document.getElementById('fwood').value,cl=document.getElementById('fcolor').value,nt=document.getElementById('fnotes').value||'אין',em=document.getElementById('femail').value;
+  document.getElementById('form-page3').style.display='none';
+  document.getElementById('success-msg').style.display='block';
+  var waMsg='שלום אהרון! שמי '+nm+', רציתי להזמין '+pr+' ('+wd+', '+cl+'). טלפון: '+ph;
+  if(nt!=='אין')waMsg+='. הערות: '+nt;
+  document.getElementById('wa-confirm').href='https://wa.me/972506810291?text='+encodeURIComponent(waMsg);
+  if(gmailConnected&&em){
+    var subject='אישור הזמנה – נגריית המרץ';
+    var body='שלום '+nm+',\n\nקיבלנו את הזמנתך בנגריית המרץ!\n\n📋 פרטי ההזמנה:\nמוצר: '+pr+'\nחומר: '+wd+'\nצבע/גוון: '+cl+'\nהערות: '+nt+'\n\nאהרון מרגני יצור איתך קשר בקרוב לתיאום.\n\nלשאלות: 050-681-0291 | 03-681-0291\n\nבברכה,\nנגריית המרץ – מאז 1969';
+    var gmailUrl='https://mail.google.com/mail/u/0/?view=cm&to='+encodeURIComponent(em)+'&su='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+    document.getElementById('gmail-confirm-msg').innerHTML='<a href="'+gmailUrl+'" target="_blank" style="color:#4285F4;font-weight:500;text-decoration:none">📧 לחץ לשליחת אישור ב-Gmail ←</a>';
+  }
+}
+
+function resetForm(){
+  ['fname','fphone','femail','fcity','fnotes','mname','mphone','mnotes'].forEach(function(id){var el=document.getElementById(id);if(el)el.value=''});
+  document.getElementById('fproduct').value='';document.getElementById('success-msg').style.display='none';
+  gmailConnected=false;document.getElementById('gmail-btn').textContent='חבר Gmail';document.getElementById('gmail-btn').className='gmail-btn';document.getElementById('gmail-btn').disabled=false;
+  document.getElementById('gmail-status-text').textContent='חבר את Gmail לקבלת אישור הזמנה';document.getElementById('gmail-sub-text').textContent='תקבל אישור אוטומטי לתיבת הדואר שלך';
+  nextStep(1);
+}
+
+function openOrderModal(product){selectedProduct=product;document.getElementById('modal-product-name').textContent='📦 '+product;document.getElementById('order-modal').classList.add('open')}
+function closeModal(e){if(e.target===document.getElementById('order-modal'))document.getElementById('order-modal').classList.remove('open')}
+
+function sendModalWhatsApp(){
+  var nm=document.getElementById('mname').value||'לקוח',ph=document.getElementById('mphone').value||'',nt=document.getElementById('mnotes').value||'';
+  var msg='שלום אהרון! שמי '+nm+', מעוניין ב'+selectedProduct;
+  if(ph)msg+='. מספרי: '+ph;if(nt)msg+='. הערה: '+nt;
+  window.open('https://wa.me/972506810291?text='+encodeURIComponent(msg),'_blank');
+  document.getElementById('order-modal').classList.remove('open');
+}
+
+function sendModalGmail(){
+  var nm=document.getElementById('mname').value||'לקוח',ph=document.getElementById('mphone').value||'',nt=document.getElementById('mnotes').value||'';
+  var subject='בקשת הצעת מחיר – '+selectedProduct+' | נגריית המרץ';
+  var body='שם: '+nm+'\nטלפון: '+ph+'\nמוצר: '+selectedProduct+'\nהערות: '+(nt||'אין');
+  window.open('https://mail.google.com/mail/u/0/?view=cm&to=&su='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body),'_blank');
+  document.getElementById('order-modal').classList.remove('open');
+}
+
+function openMaps(){window.open('https://maps.google.com/?q=' + encodeURIComponent('נגריית המרץ תל אביב'));}
+
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){var id=this.getAttribute('href').slice(1);var el=document.getElementById(id);if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'})}});
+});
+</script>
+</body>
+</html>
