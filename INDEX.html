@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -52,20 +51,27 @@ nav{background:var(--wood-dark);padding:0 2rem;display:flex;align-items:center;j
 .section-title{font-family:'Frank Ruhl Libre',serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:700;color:var(--wood-dark);margin-bottom:1rem;line-height:1.2}
 .section-sub{font-size:1rem;color:var(--text-mid);max-width:520px;line-height:1.7;font-weight:300;margin-bottom:3rem}
 .products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
-.product-card{background:#fff;border-radius:8px;overflow:hidden;border:1px solid rgba(196,129,58,0.15);transition:transform 0.3s,box-shadow 0.3s;cursor:pointer}
+.product-card{background:#fff;border-radius:8px;overflow:hidden;border:1px solid rgba(196,129,58,0.15);transition:transform 0.3s,box-shadow 0.3s;cursor:pointer;display:flex;flex-direction:column}
 .product-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(61,31,13,0.12)}
-.product-img{height:220px;display:flex;align-items:center;justify-content:center;font-size:5rem;position:relative;overflow:hidden}
-.product-img-elijah{background:linear-gradient(135deg,#4A2C0A 0%,#7B5522 50%,#9B6B2A 100%)}
-.product-img-bed{background:linear-gradient(135deg,#5C3317 0%,#8B5E3C 50%,#6B3A2A 100%)}
-.product-img-sofa{background:linear-gradient(135deg,#8B4513 0%,#D2691E 50%,#A0522D 100%)}
-.product-img-icon{position:relative;z-index:1;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.3));font-size:4.5rem}
-.product-badge{position:absolute;top:12px;right:12px;background:var(--gold);color:var(--wood-dark);font-size:0.7rem;font-weight:700;padding:4px 10px;border-radius:2px;letter-spacing:0.05em}
-.product-body{padding:1.5rem}
+.product-gallery{height:240px;position:relative;overflow:hidden;background:#333}
+.gallery-slides{width:100%;height:100%;position:relative}
+.gallery-slide{position:absolute;inset:0;opacity:0;transition:opacity 0.4s ease-in-out;display:flex;align-items:center;justify-content:center}
+.gallery-slide.active{opacity:1;position:relative}
+.gallery-slide img{width:100%;height:100%;object-fit:cover}
+.gallery-nav{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;background:rgba(0,0,0,0.4);color:#fff;border:none;border-radius:50%;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;transition:background 0.2s}
+.gallery-nav:hover{background:rgba(0,0,0,0.7)}
+.gallery-nav.prev{right:10px}
+.gallery-nav.next{left:10px}
+.gallery-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:10}
+.gallery-dot{width:8px;height:8px;background:rgba(255,255,255,0.4);border-radius:50%;transition:background 0.2s}
+.gallery-dot.active{background:var(--gold-light);width:10px;border-radius:4px}
+.product-badge{position:absolute;top:12px;right:12px;background:var(--gold);color:var(--wood-dark);font-size:0.7rem;font-weight:700;padding:4px 10px;border-radius:2px;letter-spacing:0.05em;z-index:5}
+.product-body{padding:1.5rem;display:flex;flex-direction:column;flex-grow:1}
 .product-name{font-family:'Frank Ruhl Libre',serif;font-size:1.4rem;font-weight:700;color:var(--wood-dark);margin-bottom:0.5rem}
 .product-desc{font-size:0.9rem;color:var(--text-mid);line-height:1.6;margin-bottom:1rem;font-weight:300}
 .product-features{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.25rem}
 .product-feat{background:var(--off-white);border:1px solid rgba(196,129,58,0.2);color:var(--text-mid);font-size:0.75rem;padding:4px 10px;border-radius:2px;font-weight:400}
-.product-price{font-family:'Frank Ruhl Libre',serif;font-size:1.5rem;font-weight:700;color:var(--wood-mid);margin-bottom:1rem}
+.product-price{font-family:'Frank Ruhl Libre',serif;font-size:1.5rem;font-weight:700;color:var(--wood-mid);margin-bottom:1rem;margin-top:auto}
 .product-price span{font-size:0.85rem;font-weight:400;color:var(--text-mid)}
 .product-order-btn{width:100%;background:var(--wood-dark);color:var(--wood-pale);border:none;padding:12px;border-radius:4px;font-family:'Heebo',sans-serif;font-size:0.95rem;font-weight:500;cursor:pointer;transition:background 0.2s}
 .product-order-btn:hover{background:var(--wood-mid)}
@@ -129,7 +135,7 @@ nav{background:var(--wood-dark);padding:0 2rem;display:flex;align-items:center;j
 .map-container{background:var(--wood-dark);border-radius:8px;overflow:hidden;height:280px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem}
 .map-pin{font-size:3rem;animation:pinbounce 2s ease-in-out infinite}
 @keyframes pinbounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-.map-address"><strong style="color:#fff;display:block;margin-bottom:4px;font-size:1rem">נגריית המרץ</strong>לחץ לפתיחה ב-Google Maps<br><span style="font-size:0.8rem;opacity:0.6">ניווט ישיר לנגריה</span></div>
+.map-address{color:rgba(255,255,255,0.7);font-size:0.85rem;text-align:center;font-weight:300;line-height:1.5}
 .map-open-btn{background:var(--gold);color:var(--wood-dark);padding:8px 20px;border-radius:4px;font-weight:700;font-size:0.85rem;border:none;cursor:pointer;font-family:'Heebo',sans-serif;margin-top:0.5rem}
 .since-banner{background:rgba(212,168,71,0.12);border:1px solid rgba(212,168,71,0.3);border-radius:6px;padding:10px 16px;display:inline-flex;align-items:center;gap:8px;color:var(--gold-light);font-size:0.85rem;font-weight:500;margin-bottom:1.5rem}
 footer{background:var(--wood-dark);padding:3rem 2rem;text-align:center}
@@ -182,10 +188,22 @@ footer{background:var(--wood-dark);padding:3rem 2rem;text-align:center}
     <h2 class="section-title">המוצרים שלנו</h2>
     <p class="section-sub">כל פריט מיוצר בעבודת יד לפי הזמנה אישית — מחומרי גלם מובחרים, בדיוק לפי צרכיך</p>
     <div class="products-grid">
+      
       <div class="product-card" onclick="openOrderModal('כיסא אליהו הנביא')">
-        <div class="product-img product-img-elijah">
+        <div class="product-gallery">
           <div class="product-badge">מומחיות</div>
-          <span class="product-img-icon">🪑</span>
+          <button class="gallery-nav prev" onclick="moveSlide(event, this, -1)">❯</button>
+          <button class="gallery-nav next" onclick="moveSlide(event, this, 1)">❮</button>
+          <div class="gallery-slides">
+            <div class="gallery-slide active"><img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=400&q=80" alt="כיסא אליהו 1"></div>
+            <div class="gallery-slide"><img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&w=400&q=80" alt="כיסא אליהו 2"></div>
+            <div class="gallery-slide"><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=400&q=80" alt="כיסא אליהו 3"></div>
+          </div>
+          <div class="gallery-dots">
+            <span class="gallery-dot active"></span>
+            <span class="gallery-dot"></span>
+            <span class="gallery-dot"></span>
+          </div>
         </div>
         <div class="product-body">
           <div class="product-name">כיסא אליהו הנביא</div>
@@ -194,16 +212,25 @@ footer{background:var(--wood-dark);padding:3rem 2rem;text-align:center}
             <span class="product-feat">גילוף יד</span>
             <span class="product-feat">עיצוב מסורתי</span>
             <span class="product-feat">לוח שם אופציונלי</span>
-            <span class="product-feat">אריזת מתנה</span>
             <span class="product-feat">עץ מלא</span>
           </div>
           <div class="product-price">לפי הזמנה <span>· צור קשר למחיר</span></div>
           <button class="product-order-btn">להזמנה →</button>
         </div>
       </div>
+
       <div class="product-card" onclick="openOrderModal('מיטת נוער')">
-        <div class="product-img product-img-bed">
-          <span class="product-img-icon">🛏️</span>
+        <div class="product-gallery">
+          <button class="gallery-nav prev" onclick="moveSlide(event, this, -1)">❯</button>
+          <button class="gallery-nav next" onclick="moveSlide(event, this, 1)">❮</button>
+          <div class="gallery-slides">
+            <div class="gallery-slide active"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=400&q=80" alt="מיטת נוער 1"></div>
+            <div class="gallery-slide"><img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=400&q=80" alt="מיטת נוער 2"></div>
+          </div>
+          <div class="gallery-dots">
+            <span class="gallery-dot active"></span>
+            <span class="gallery-dot"></span>
+          </div>
         </div>
         <div class="product-body">
           <div class="product-name">מיטת נוער</div>
@@ -212,16 +239,27 @@ footer{background:var(--wood-dark);padding:3rem 2rem;text-align:center}
             <span class="product-feat">עץ מלא</span>
             <span class="product-feat">מגירות אחסון</span>
             <span class="product-feat">80/90/100 ס"מ</span>
-            <span class="product-feat">גרוז'יה אופציונלי</span>
           </div>
           <div class="product-price">לפי הזמנה <span>· צור קשר למחיר</span></div>
           <button class="product-order-btn">להזמנה →</button>
         </div>
       </div>
+
       <div class="product-card" onclick="openOrderModal('ספה')">
-        <div class="product-img product-img-sofa">
+        <div class="product-gallery">
           <div class="product-badge">פופולרי</div>
-          <span class="product-img-icon">🛋️</span>
+          <button class="gallery-nav prev" onclick="moveSlide(event, this, -1)">❯</button>
+          <button class="gallery-nav next" onclick="moveSlide(event, this, 1)">❮</button>
+          <div class="gallery-slides">
+            <div class="gallery-slide active"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=400&q=80" alt="ספה 1"></div>
+            <div class="gallery-slide"><img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=400&q=80" alt="ספה 2"></div>
+            <div class="gallery-slide"><img src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?auto=format&fit=crop&w=400&q=80" alt="ספה 3"></div>
+          </div>
+          <div class="gallery-dots">
+            <span class="gallery-dot active"></span>
+            <span class="gallery-dot"></span>
+            <span class="gallery-dot"></span>
+          </div>
         </div>
         <div class="product-body">
           <div class="product-name">ספות</div>
@@ -230,12 +268,12 @@ footer{background:var(--wood-dark);padding:3rem 2rem;text-align:center}
             <span class="product-feat">עץ מלא</span>
             <span class="product-feat">ריפוד פרמיום</span>
             <span class="product-feat">מידות לפי בחירה</span>
-            <span class="product-feat">אחריות</span>
           </div>
           <div class="product-price">לפי הזמנה <span>· צור קשר למחיר</span></div>
           <button class="product-order-btn">להזמנה →</button>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -429,6 +467,25 @@ footer{background:var(--wood-dark);padding:3rem 2rem;text-align:center}
 
 <script>
 var currentStep=1,gmailConnected=false,selectedProduct='';
+
+function moveSlide(event, button, direction) {
+  event.stopPropagation();
+  var gallery = button.closest('.product-gallery');
+  var slides = gallery.querySelectorAll('.gallery-slide');
+  var dots = gallery.querySelectorAll('.gallery-dot');
+  var activeIndex = 0;
+  slides.forEach(function(slide, idx) {
+    if(slide.classList.contains('active')) activeIndex = idx;
+  });
+  slides[activeIndex].classList.remove('active');
+  if(dots.length > 0) dots[activeIndex].classList.remove('active');
+  var newIndex = activeIndex + direction;
+  if(newIndex >= slides.length) newIndex = 0;
+  if(newIndex < 0) newIndex = slides.length - 1;
+  slides[newIndex].classList.add('active');
+  if(dots.length > 0) dots[newIndex].classList.add('active');
+}
+
 function nextStep(n){
   if(n===2){var nm=document.getElementById('fname').value,ph=document.getElementById('fphone').value;if(!nm||!ph){alert('אנא מלא שם וטלפון');return}}
   if(n===3){var pr=document.getElementById('fproduct').value;if(!pr){alert('אנא בחר מוצר');return}updateSummary()}
@@ -436,18 +493,21 @@ function nextStep(n){
   ['form-page1','form-page2','form-page3'].forEach(function(id,i){document.getElementById(id).style.display=(i+1===n)?'block':'none'});
   ['step1','step2','step3'].forEach(function(id,i){document.getElementById(id).className='step '+(i+1<n?'done':i+1===n?'active':'inactive')});
 }
+
 function updateSummary(){
   var nm=document.getElementById('fname').value,ph=document.getElementById('fphone').value,pr=document.getElementById('fproduct').value,wd=document.getElementById('fwood').value,cl=document.getElementById('fcolor').value,nt=document.getElementById('fnotes').value,em=document.getElementById('femail').value;
   var html='👤 '+nm+'<br>📞 '+ph+(em?'<br>📧 '+em:'')+'<br>🪵 '+pr+' | '+wd+' | '+cl;
   if(nt)html+='<br>📝 '+nt;
   document.getElementById('summary-content').innerHTML=html;
 }
+
 function connectGmail(){
   var email=document.getElementById('femail').value;
   if(!email){alert('אנא הזן כתובת אימייל בשלב הראשון');return}
   var btn=document.getElementById('gmail-btn');btn.textContent='מחבר...';btn.disabled=true;
   setTimeout(function(){gmailConnected=true;btn.textContent='✓ מחובר';btn.className='gmail-btn connected';document.getElementById('gmail-status-text').textContent='Gmail מחובר: '+email;document.getElementById('gmail-sub-text').textContent='אישור ישלח לתיבת הדואר שלך אחרי השליחה'},1400);
 }
+
 function submitOrder(){
   var nm=document.getElementById('fname').value,ph=document.getElementById('fphone').value,pr=document.getElementById('fproduct').value,wd=document.getElementById('fwood').value,cl=document.getElementById('fcolor').value,nt=document.getElementById('fnotes').value||'אין',em=document.getElementById('femail').value;
   document.getElementById('form-page3').style.display='none';
@@ -462,6 +522,7 @@ function submitOrder(){
     document.getElementById('gmail-confirm-msg').innerHTML='<a href="'+gmailUrl+'" target="_blank" style="color:#4285F4;font-weight:500;text-decoration:none">📧 לחץ לשליחת אישור ב-Gmail ←</a>';
   }
 }
+
 function resetForm(){
   ['fname','fphone','femail','fcity','fnotes','mname','mphone','mnotes'].forEach(function(id){var el=document.getElementById(id);if(el)el.value=''});
   document.getElementById('fproduct').value='';document.getElementById('success-msg').style.display='none';
@@ -469,8 +530,10 @@ function resetForm(){
   document.getElementById('gmail-status-text').textContent='חבר את Gmail לקבלת אישור הזמנה';document.getElementById('gmail-sub-text').textContent='תקבל אישור אוטומטי לתיבת הדואר שלך';
   nextStep(1);
 }
+
 function openOrderModal(product){selectedProduct=product;document.getElementById('modal-product-name').textContent='📦 '+product;document.getElementById('order-modal').classList.add('open')}
 function closeModal(e){if(e.target===document.getElementById('order-modal'))document.getElementById('order-modal').classList.remove('open')}
+
 function sendModalWhatsApp(){
   var nm=document.getElementById('mname').value||'לקוח',ph=document.getElementById('mphone').value||'',nt=document.getElementById('mnotes').value||'';
   var msg='שלום אהרון! שמי '+nm+', מעוניין ב'+selectedProduct;
@@ -478,6 +541,7 @@ function sendModalWhatsApp(){
   window.open('https://wa.me/972506806664?text='+encodeURIComponent(msg),'_blank');
   document.getElementById('order-modal').classList.remove('open');
 }
+
 function sendModalGmail(){
   var nm=document.getElementById('mname').value||'לקוח',ph=document.getElementById('mphone').value||'',nt=document.getElementById('mnotes').value||'';
   var subject='בקשת הצעת מחיר – '+selectedProduct+' | נגריית המרץ';
@@ -485,12 +549,12 @@ function sendModalGmail(){
   window.open('https://mail.google.com/mail/u/0/?view=cm&to=&su='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body),'_blank');
   document.getElementById('order-modal').classList.remove('open');
 }
-function openMaps(){window.open('https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('נגריית המרץ תל אביב'));}
+
+function openMaps(){window.open('https://maps.google.com/?q=' + encodeURIComponent('נגריית המרץ תל אביב'));}
+
 document.querySelectorAll('a[href^="#"]').forEach(function(a){
   a.addEventListener('click',function(e){var id=this.getAttribute('href').slice(1);var el=document.getElementById(id);if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'})}});
 });
 </script>
 </body>
 </html>
-HTMLEOF
-echo "done"
