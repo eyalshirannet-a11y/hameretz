@@ -1,20 +1,20 @@
 <!DOCTYPE html><html lang="he" dir="rtl"><head><meta charset="UTF-8"><link rel="stylesheet" href="style.css"></head>
 <body><div class="page-container">
 <nav>
-  <a href="index.html" style="color:#E8C89A;text-decoration:none;font-size:1.5rem;font-weight:bold;">נגריית המרץ</a>
-  <div class="nav-links">
-    <a href="index.html">בית</a><a href="about.html">אודות</a><a href="order.html">הזמנה</a><a href="contact.html">צור קשר</a>
-  </div>
+  <a href="index.html" style="color:#E8C89A;text-decoration:none;font-size:1.8rem;font-weight:bold;">נגריית המרץ</a>
+  <div class="nav-links"><a href="index.html">בית</a><a href="about.html">אודות</a><a href="order.html">הזמנה</a><a href="contact.html">צור קשר</a></div>
 </nav>
-<div class="content"><h1>הזמנה מותאמת</h1>
-<input type="text" id="name" placeholder="שם מלא">
-<input type="tel" id="phone" placeholder="טלפון">
-<textarea id="notes" placeholder="פרטי ההזמנה"></textarea>
-<button onclick="sendWA()">שלח בוואטסאפ</button>
-<button onclick="sendMail()">שלח במייל</button>
+<div class="content">
+  <h1>הזמנה מותאמת אישית</h1>
+  <p>מעוניינים ברהיט בעיצוב אישי? השאירו פרטים ונחזור אליכם בהקדם!</p>
+  <input type="text" id="name" placeholder="שם מלא">
+  <input type="tel" id="phone" placeholder="טלפון">
+  <textarea id="notes" rows="4" placeholder="תארו לנו את הפריט שתרצו להזמין (מידות, סוג עץ, סגנון)"></textarea>
+  <button onclick="sendWA()">שלח בקשה בוואטסאפ</button>
+  <button onclick="sendMail()">שלח במייל</button>
 </div>
 <script>
-function sendWA() { window.open('https://wa.me/972506810291?text=' + document.getElementById('name').value); }
-function sendMail() { window.location.href = 'mailto:aharon@email.com?subject=הזמנה&body=' + document.getElementById('notes').value; }
+function sendWA() { window.open('https://wa.me/972506810291?text=שלום, שמי ' + document.getElementById('name').value + ' ואני מעוניין בהזמנה: ' + document.getElementById('notes').value); }
+function sendMail() { window.location.href = 'mailto:aharon@example.com?subject=הזמנה חדשה&body=' + document.getElementById('notes').value; }
 </script>
 </div></body></html>
