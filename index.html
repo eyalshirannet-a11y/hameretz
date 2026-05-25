@@ -1,9 +1,42 @@
-<!DOCTYPE html><html lang="he" dir="rtl"><head><meta charset="UTF-8"><link rel="stylesheet" href="style.css"></head>
-<body><div class="page-container">
-<nav><a href="index.html" style="color:#E8C89A;text-decoration:none;font-size:1.8rem;font-weight:bold;">נגריית המרץ</a>
-<div class="nav-links"><a href="index.html">בית</a><a href="about.html">אודות</a><a href="order.html">הזמנה</a><a href="contact.html">צור קשר</a></div></nav>
-<div class="content">
-  <h1>ברוכים הבאים לנגריית המרץ</h1>
-  <img src="ELYAHU_1.jpeg" style="width:100%; border-radius:10px; margin-top:20px;">
-  <p>אנו מזמינים אתכם להתרשם מעולם של עץ מלא. מתמחים בייצור כיסאות אליהו, שולחנות יוקרתיים ורהיטים בהתאמה אישית.</p>
-</div></div></body></html>
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* הוספת עיצוב לגלריה */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
+        .gallery-item { background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; text-align: center; text-decoration: none; color: white; border: 1px solid #B8860B; transition: 0.3s; }
+        .gallery-item:hover { background: #B8860B; transform: scale(1.05); }
+        .gallery-item img { width: 100%; height: 150px; object-fit: cover; border-radius: 5px; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+<div class="page-container">
+    <nav>
+        <a href="index.html" style="color:#E8C89A;text-decoration:none;font-size:1.8rem;font-weight:bold;">נגריית המרץ</a>
+        <div class="nav-links"><a href="index.html">בית</a><a href="about.html">אודות</a><a href="order.html">הזמנה</a><a href="contact.html">צור קשר</a></div>
+    </nav>
+
+    <div class="content">
+        <h1>ברוכים הבאים לנגריית המרץ</h1>
+        <p>אומנות בעץ מלא בעיצוב אישי. בחרו קטגוריה לצפייה בפרטים:</p>
+
+        <div class="gallery-grid">
+            <a href="order.html" class="gallery-item">
+                <img src="ELYAHU_1.jpeg" alt="כיסאות אליהו">
+                <h3>כיסאות אליהו הנביא</h3>
+            </a>
+            <a href="order.html" class="gallery-item">
+                <img src="ELYAHU_1.jpeg" alt="ספות וכורסאות">
+                <h3>ספות וכורסאות</h3>
+            </a>
+            <a href="order.html" class="gallery-item">
+                <img src="ELYAHU_1.jpeg" alt="שולחנות סלון">
+                <h3>שולחנות סלון</h3>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
