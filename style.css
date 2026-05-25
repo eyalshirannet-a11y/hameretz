@@ -1,22 +1,12 @@
-/* העיצוב המקורי שלך */
-*{margin:0;padding:0;box-sizing:border-box}
-:root { --wood-dark: #3D1F0D; --wood-mid: #7B3F1A; --wood-light: #C4813A; --wood-pale: #E8C89A; --cream: #FDF6EC; --gold: #B8860B; }
-body{font-family:'Heebo',sans-serif;background:var(--cream);direction:rtl}
-
-/* הגדרת הרקע החדש */
-.page-bg {
-  background: linear-gradient(rgba(61, 31, 13, 0.85), rgba(61, 31, 13, 0.85)), url('ELYAHU_1.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: white;
-  min-height: 100vh;
-  padding: 2rem;
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Heebo', sans-serif; direction: rtl; color: white; }
+.page-container {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('ELYAHU_1.jpeg');
+    background-size: cover; background-position: center; background-attachment: fixed;
+    min-height: 100vh; padding: 2rem;
 }
-
-/* שאר העיצוב המקורי */
-nav{background:var(--wood-dark);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px}
-.nav-logo{font-family:'Frank Ruhl Libre',serif;color:var(--wood-pale);font-size:1.4rem;text-decoration:none}
-.nav-links{display:flex;gap:1.5rem;list-style:none}
-.nav-links a{color:var(--wood-pale);text-decoration:none}
-.section{max-width:900px;margin:0 auto;background: rgba(255,255,255,0.1);padding:2rem;border-radius:10px}
+nav { background: #3D1F0D; padding: 1rem; display: flex; justify-content: space-between; align-items: center; border-radius: 8px; margin-bottom: 2rem; }
+.nav-links a { color: #E8C89A; margin: 0 10px; text-decoration: none; font-weight: bold; }
+.content { max-width: 800px; margin: 0 auto; background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 10px; }
+input, textarea { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: none; }
+button { padding: 10px 20px; background: #B8860B; color: white; border: none; cursor: pointer; font-weight: bold; margin-top: 10px; }
