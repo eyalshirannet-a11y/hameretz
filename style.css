@@ -9,5 +9,5 @@ nav { background: #3D1F0D; padding: 1.5rem; display: flex; justify-content: spac
 .nav-links a { color: #E8C89A; margin: 0 15px; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
 .content { max-width: 900px; margin: 0 auto; background: rgba(0,0,0,0.6); padding: 3rem; border-radius: 15px; line-height: 1.8; }
 h1 { color: #E8C89A; margin-bottom: 1.5rem; }
-input, textarea { width: 100%; padding: 12px; margin: 10px 0; border-radius: 5px; border: none; font-size: 1rem; }
+input, textarea, select { width: 100%; padding: 12px; margin: 10px 0; border-radius: 5px; border: none; font-size: 1rem; }
 button { padding: 12px 25px; background: #B8860B; color: white; border: none; cursor: pointer; font-weight: bold; font-size: 1rem; margin-top: 15px; border-radius: 5px; }
